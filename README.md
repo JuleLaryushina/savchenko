@@ -77,9 +77,9 @@ bazel-bin/textsum/seq2seq_attention \
   --vocab_path=data/vocab \
   --log_root=textsum/log_root \
   --train_dir=textsum/log_root/train
-  --max_run_steps=<N>
+  --max_run_steps=N
 ```
-<N> should be some reasonable number, default is 10000000, so you'll never get the results with CPU for your toy example.  
+N (stands for maximum number of run steps) should be some reasonable number, default is 10000000, so you'll never get the results with CPU for your toy example.  
 To validate the model, run
 ```
 bazel-bin/textsum/seq2seq_attention \
