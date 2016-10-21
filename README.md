@@ -39,17 +39,81 @@ All types of installation you can find [here](https://www.tensorflow.org/version
 
 ### Bazel installation
 
+Bazel is Google's own build tool, now publicly available in Beta.  
+You will need it to build textsum model.  
 Follow the instructions listed [here](https://www.bazel.io/versions/master/docs/install.html#ubuntu).
 
 ### Textsum installation
 
 In order to prepare workspace for your example, simply visit [workspace_sample](https://github.com/JuleLaryushina/savchenko/tree/master/workspace_sample) from this repo.  
-
-
+You have to recreate it's structure & remove "this file should be empty" string from the WORKSPACE file.  
+Workspace sample contains:
+* textsum original code from [this repo](https://github.com/tensorflow/models/tree/master/textsum)
+* data folder with binary data file (data), original data file (text_data) and vocabulary (vocab)
+* WORKSPACE file (needed for Bazel)
+Original data file (text_data) represents data format for model training.  
+You have to transform your dataset to this format and then make it binary.  
+Authors provide a script for this purpose, 
+```
+python data_convert_example.py --command text_to_binary --in_file data/text_data --out_file data/binary_data
+```
+but you can do it by yourself.  
+Build app with Bazel by running
+```
+bazel build -c opt --config=cuda textsum/...
+```
 
 ## Toy example
 
+Congratulations! You have successfully installed dependencies and built textsum.  
+In your **data** folder you already have a toy example with 21 articles (training/validation/testin folder contain the same dataset).  
+To train the model, run
+```
+bazel-bin/textsum/seq2seq_attention \
+  --mode=train \
+  --article_key=article \
+  --abstract_key=abstract \
+  --data_path=data/training/data* \
+  --vocab_path=data/vocab \
+  --log_root=textsum/log_root \
+  --train_dir=textsum/log_root/train
+  --max_run_steps=<N>
+```
+<N> should be some reasonable number, default is 10000000, so you'll never get the results with CPU for your toy example.  
+To validate the model, run
+```
+bazel-bin/textsum/seq2seq_attention \
+  --mode=eval \
+  --article_key=article \
+  --abstract_key=abstract \
+  --data_path=data/validation/data* \
+  --vocab_path=data/vocab \
+  --log_root=textsum/log_root \
+  --eval_dir=textsum/log_root/eval
+```
+To test the model, run  
+```
+bazel-bin/textsum/seq2seq_attention \
+  --mode=decode \
+  --abstract_key=abstract \
+  --data_path=data/test/data* \
+  --vocab_path=data/vocab \
+  --log_root=textsum/log_root \
+  --decode_dir=textsum/log_root/decode \
+  --beam_size=8
+```
 ## Data preparation
+
+Some of the most common questions are **Omg, where can I get data for training?** or **Should I use vocabulary from the toy example?**  
+Data for training depends on researcher's task.  
+Some ideas:
+* Use web-scraping tools (i.e. [rvest](http://www.reed.edu/data-at-reed/resources/R/rvest.html) and [selectorgadget](ftp://cran.r-project.org/pub/R/web/packages/rvest/vignettes/selectorgadget.html) in R or [Scrapy](https://scrapy.org/) in Python)
+* Use articles data (i.e. [fulltext](https://cran.r-project.org/web/packages/fulltext/vignettes/fulltext_vignette.html) in R, [Sunburnt](https://gist.github.com/drewbuschhorn/1077318) or [python_arXiv_parsing_example](https://arxiv.org/help/api/examples/python_arXiv_parsing_example.txt) in Python)
+* Use public API's (i.e. from [this list](http://www.programmableweb.com/category/News%20Services/apis?category=20250))
+
+### Data format
+
+### Vocabulary generation
 
 ## Model training
 
