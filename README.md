@@ -49,7 +49,7 @@ In order to prepare workspace for your example, simply visit [workspace_sample](
 You have to recreate it's structure & remove "this file should be empty" string from the WORKSPACE file.  
 Workspace sample contains:
 * textsum original code from [this repo](https://github.com/tensorflow/models/tree/master/textsum)
-* data folder with binary data file (data), original data file (text_data) and vocabulary (vocab)
+* data folder with binary data files (training/data, testing/data, validation/data), original data file (text_data) and vocabulary (vocab)
 * WORKSPACE file (needed for Bazel)
 Original data file (text_data) represents data format for model training.  
 You have to transform your dataset to this format and then make it binary.  
