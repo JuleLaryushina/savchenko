@@ -119,11 +119,11 @@ Simple vocabulary generation is discussed below.
 ### Data format
 
 Your data file should contain the following:
-* Each article starts with <article>
-* Each abstract starts with <abstract>
-* Each paragraph starts with "<p>" tag and ends with "</p>" tag
-* Each sentence starts with "<s>" tag and ends with "</s>" tag
-* Articles and abstracts are separated by <d> and </d> tags
+* Each article starts with `<article>`
+* Each abstract starts with `<abstract>`
+* Each paragraph starts with "`<p>`" tag and ends with "`</p>`" tag
+* Each sentence starts with "`<s>`" tag and ends with "`</s>`" tag
+* Articles and abstracts are separated by `<d>` and `</d>` tags
 * Samples are separated with newline (or may be in separate files)
 So you should have something like:
 ```
@@ -132,8 +132,4 @@ article=<d> <p> <s> here article2 sentence 1. </s> <s> here article2 sentence 2 
 ```
 ### Vocabulary generation
 
-## Model training
 
-## Model validation
-
-## Model testing
