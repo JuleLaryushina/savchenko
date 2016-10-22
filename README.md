@@ -97,6 +97,7 @@ To test the model, run
 ```
 bazel-bin/textsum/seq2seq_attention \
   --mode=decode \
+  --article_key=article \
   --abstract_key=abstract \
   --data_path=data/test/data* \
   --vocab_path=data/vocab \
