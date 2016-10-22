@@ -4,7 +4,7 @@ This repo is created to help Ubuntu users in training of their own textsum model
 [Original repositoty](https://github.com/tensorflow/models/tree/master/textsum) contains required scripts, but there are still numerous issues on data types, training process, questions like "what is a WORKSPACE file", etc.   
 This tutorial is an extended version of original tutorial.  
 
-## Pre-installation
+### Pre-installation
 
 Textsum requires [TensorFlow](https://www.tensorflow.org) and [Bazel](https://www.bazel.io/) to be installed.  
 We assume, you've alredy installed Python.  
