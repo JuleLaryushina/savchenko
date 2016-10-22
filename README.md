@@ -119,8 +119,8 @@ Simple vocabulary generation is discussed below.
 ### Data format
 
 Your data file should contain the following:
-* Each article starts with `<article>`
-* Each abstract starts with `<abstract>`
+* Each article starts with specific tag (i.e. `<article>`)
+* Each abstract starts with specific tag (i.e. `<abstract>`)
 * Each paragraph starts with "`<p>`" tag and ends with "`</p>`" tag
 * Each sentence starts with "`<s>`" tag and ends with "`</s>`" tag
 * Articles and abstracts are separated by `<d>` and `</d>` tags
