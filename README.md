@@ -143,7 +143,7 @@ or your own script.
 
 ### Vocabulary generation
 
-You also need to create your own vocabulary file, a simple script for the task can be found [here]().  
+You also need to create your own vocabulary file, a simple script for the task can be found [here](https://github.com/JuleLaryushina/savchenko/blob/master/vocabulary_gen.R).  
 [Authors](https://github.com/tensorflow/models/tree/master/textsum) provide no guide to vocabulary generation, but their toy file contains specific tags (`<UNK>`, `<PAD>`, etc), sentence/paragraph separators, and their presence is checked in seq2seq_attention.py
 ```
   assert vocab.WordToId(data.PAD_TOKEN) > 0
