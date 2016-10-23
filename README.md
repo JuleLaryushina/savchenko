@@ -114,6 +114,7 @@ Some ideas:
 * Use articles data (i.e. [fulltext](https://cran.r-project.org/web/packages/fulltext/vignettes/fulltext_vignette.html) in R, [Sunburnt](https://gist.github.com/drewbuschhorn/1077318) or [python_arXiv_parsing_example](https://arxiv.org/help/api/examples/python_arXiv_parsing_example.txt) in Python)
 * Use public API's (i.e. from [this list](http://www.programmableweb.com/category/News%20Services/apis?category=20250))
 Vocabulary in toy example was obtained from [Gigaword](https://catalog.ldc.upenn.edu/LDC2003T05).  
+Simple data collector can be found [here](https://github.com/JuleLaryushina/savchenko/blob/master/data_collector.R).  
 Of course, vocabulary for your model depends on your dataset (i.e. specific medicine articles contains specific medical words, which you won't find in default vocabulary).  
 Simple vocabulary generation is discussed below.
 
