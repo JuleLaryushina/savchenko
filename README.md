@@ -196,4 +196,4 @@ In order to evaluate the model, run `bazel-bin/textsum/seq2seq_attention \ --<fl
 
 ## Sequence2sequence
 
-As we've found it impossible to train our own model using CPU only (with max_run_steps = 10 it has taken all night to train on the toy example with 21 articles, resulting avg_loss was 8.988146), and as it is said [here](https://github.com/tensorflow/models/issues/373) there is no reason to train more, we decided to play with original sequence2sequence model.  
+As we've found it impossible to train our own model using CPU only (with max_run_steps = 10 it has taken all night to train on the toy example with 21 articles, resulting avg_loss was 8.988146), and as it is said [here](https://github.com/tensorflow/models/issues/373) and [here](https://github.com/tensorflow/models/issues/560) there is no reason to train more, we decided to play with original sequence2sequence model.  
