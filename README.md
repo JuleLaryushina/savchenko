@@ -114,7 +114,7 @@ Some ideas:
 * Use articles data (i.e. [fulltext](https://cran.r-project.org/web/packages/fulltext/vignettes/fulltext_vignette.html) in R, [Sunburnt](https://gist.github.com/drewbuschhorn/1077318) or [python_arXiv_parsing_example](https://arxiv.org/help/api/examples/python_arXiv_parsing_example.txt) in Python)
 * Use public API's (i.e. from [this list](http://www.programmableweb.com/category/News%20Services/apis?category=20250))
 Vocabulary in toy example was obtained from [Gigaword](https://catalog.ldc.upenn.edu/LDC2003T05).  
-Simple data collector can be found [here](https://github.com/JuleLaryushina/savchenko/blob/master/data_collector.R).  
+Simple data collector can be found [here](https://github.com/JuleLaryushina/savchenko/blob/master/textsum/data_collector.R).  
 Of course, vocabulary for your model depends on your dataset (i.e. specific medicine articles contains specific medical words, which you won't find in default vocabulary).  
 Simple vocabulary generation is discussed below.
 
@@ -135,7 +135,7 @@ So you should have something like:
 article=<d> <p> <s> here article1 sentence 1. </s> <s> here article1 sentence 2 </s> <s> ... </s> </p> </d> abstract=<d> <p> <s>  here abstract1 sentence 1. </s> <s> here abstract1 sentence 2 </s> <s> ... </s> </p> </d> 
 article=<d> <p> <s> here article2 sentence 1. </s> <s> here article2 sentence 2 </s> <s> ... </s> </p> </d> abstract=<d> <p> <s>  here abstract2 sentence 1. </s> <s> here abstract2 sentence 2 </s> <s> ... </s> </p> </d> ... 
 ```
-A simple script preparing texts can be found [here]().  
+A simple script preparing texts can be found [here](https://github.com/JuleLaryushina/savchenko/blob/master/textsum/data_formatter.R).  
 After preparation make the files binary using 
 ```
 python data_convert_example.py --command text_to_binary --in_file data/text_data --out_file data/binary_data
@@ -144,7 +144,7 @@ or your own script.
 
 ### Vocabulary generation
 
-You also need to create your own vocabulary file, a simple script for the task can be found [here](https://github.com/JuleLaryushina/savchenko/blob/master/vocabulary_gen.R).  
+You also need to create your own vocabulary file, a simple script for the task can be found [here](https://github.com/JuleLaryushina/savchenko/blob/master/textsum/vocabulary_gen.R).  
 [Authors](https://github.com/tensorflow/models/tree/master/textsum) provide no guide to vocabulary generation, but their toy file contains specific tags (`<UNK>`, `<PAD>`, etc), sentence/paragraph separators, and their presence is checked in seq2seq_attention.py
 ```
   assert vocab.WordToId(data.PAD_TOKEN) > 0
