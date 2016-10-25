@@ -246,7 +246,8 @@ $ export PATH="$PATH:$HOME/bin"
 Необходимо трансформировать данные в этот вид и в двоичный формат.    
 
 ```
-python data_convert_example.py --command text_to_binary --in_file data/text_data --out_file data/binary_data
+python data_convert_example.py --command text_to_binary --in_file data/text_data 
+	--out_file data/binary_data
 ```
 
 Осталось создать приложение:
@@ -415,7 +416,8 @@ python translate.py --decode --data_dir [your_data_directory] --train_dir [check
 ## Использование модели
 ```
 python translate.py --decode --data_dir [your_data_directory] 
-	--train_dir [checkpoints_directory] --size=<size_on_train> --steps_per_checkpoint=50
+	--train_dir [checkpoints_directory] --size=<size_on_train> 
+    	--steps_per_checkpoint=50
 ```
 
 <p align="center">
