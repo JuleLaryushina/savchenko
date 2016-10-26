@@ -1,13 +1,13 @@
 # Textsum/TensorFlow training & testing example
 
 This repo is created to help Ubuntu users in training of their own textsum models.  
-[Original repositoty](https://github.com/tensorflow/models/tree/master/textsum) contains required scripts, but there are still numerous issues on data types, training process, questions like "what is a WORKSPACE file", etc.   
+[Original repository](https://github.com/tensorflow/models/tree/master/textsum) contains required scripts, but there are still numerous issues on data types, training process, questions like "what is a WORKSPACE file", etc.   
 This tutorial is an extended version of original tutorial.  
 
 ### Pre-installation
 
 Textsum requires [TensorFlow](https://www.tensorflow.org) and [Bazel](https://www.bazel.io/) to be installed.  
-We assume, you've alredy installed Python.  
+We assume, you've already installed Python.  
 If not, proceed to [Python installation steps](https://www.python.org/downloads/).  
 This repo contains R code, so you're recommended to [install R](http://www.jason-french.com/blog/2013/03/11/installing-r-in-linux/).
 Also you might need to [install pip](https://www.liquidweb.com/kb/how-to-install-pip-on-ubuntu-12-04-lts/).
@@ -112,7 +112,7 @@ Data for training depends on researcher's task.
 Some ideas:
 * Use web-scraping tools (i.e. [rvest](http://www.reed.edu/data-at-reed/resources/R/rvest.html) and [selectorgadget](ftp://cran.r-project.org/pub/R/web/packages/rvest/vignettes/selectorgadget.html) in R or [Scrapy](https://scrapy.org/) in Python)
 * Use articles data (i.e. [fulltext](https://cran.r-project.org/web/packages/fulltext/vignettes/fulltext_vignette.html) in R, [Sunburnt](https://gist.github.com/drewbuschhorn/1077318) or [python_arXiv_parsing_example](https://arxiv.org/help/api/examples/python_arXiv_parsing_example.txt) in Python)
-* Use public API's (i.e. from [this list](http://www.programmableweb.com/category/News%20Services/apis?category=20250))
+* Use public API's (i.e. from [this list](http://www.programmableweb.com/category/News Services/apis?category=20250))
 Vocabulary in toy example was obtained from [Gigaword](https://catalog.ldc.upenn.edu/LDC2003T05).  
 Simple data collector can be found [here](https://github.com/JuleLaryushina/savchenko/blob/master/textsum/data_collector.R).  
 Of course, vocabulary for your model depends on your dataset (i.e. specific medicine articles contains specific medical words, which you won't find in default vocabulary).  
